@@ -1,43 +1,49 @@
 package example.codeclan.com.godzilla;
-import org.junit.Test;
-import org.junit.Before;
-import static org.junit.Assert.*;
 
-public class GodzillaTest {
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+/**
+ * Created by user on 21/06/2017.
+ */
+
+public class CthulhuTest {
 
     Skyscraper skyscraper;
-    Godzilla godzilla;
+    Cthulhu cthulhu;
 
     @Before
     public void before(){
-        godzilla = new Godzilla("Bill", 100, 50);
+        cthulhu = new Cthulhu("Gary", 100, 50);
         skyscraper = new Skyscraper("building", 130);
 
     }
 
     @Test
     public void hasName(){
-        assertEquals("Bill", godzilla.getName());
+        assertEquals("Gary", cthulhu.getName());
     }
 
     @Test
     public void canRoar(){
-        assertEquals("Roooooaooooaaaaaaaaar!!!", godzilla.roar());
+        assertEquals("Bleeerrgghghgh!", cthulhu.roar());
     }
 
     @Test
     public void canGetHealthValue(){
-        assertEquals(100, godzilla.getHealthValue());
+        assertEquals(100, cthulhu.getHealthValue());
     }
 
     @Test
     public void canGetDestructiveForce(){
-        assertEquals(50, godzilla.getDestructiveForce());
+        assertEquals(50, cthulhu.getDestructiveForce());
     }
 
     @Test
     public void canAttack(){
-        godzilla.attack(skyscraper);
+        cthulhu.attack(skyscraper);
         assertEquals(80, skyscraper.getHealthValue());
     }
 }
